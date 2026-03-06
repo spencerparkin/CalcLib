@@ -145,7 +145,7 @@ void StringNumber::InvalidateCache( void ) const
 	
 	WipeCache();
 
-	int length = strlen( numberString ) + 1;
+	int length = (int)strlen( numberString ) + 1;
 	string = new char[ length ];
 	strcpy_s( string, length, numberString );
 

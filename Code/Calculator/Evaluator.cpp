@@ -372,7 +372,7 @@ void StringEvaluator::String( const char* string )
 {
 	if( this->string )
 		delete[] this->string;
-	int stringLength = strlen( string ) + 1;
+	int stringLength = (int)strlen( string ) + 1;
 	this->string = new char[ stringLength ];
 	strcpy_s( this->string, stringLength, string );
 }

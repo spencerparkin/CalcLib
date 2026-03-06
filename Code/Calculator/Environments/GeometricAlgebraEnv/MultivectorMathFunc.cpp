@@ -269,7 +269,7 @@ void MultivectorMathFunctionEvaluator::DeleteScalarArguments( double**& scalarNu
 				else
 				{
 					double absArgument = *scalarNumberArray[0];
-					double absResult = abs( absArgument );
+					double absResult = fabs( absArgument );
 					if( !multivectorNumber->AssignFrom( absResult, environment ) )
 						break;
 

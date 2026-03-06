@@ -157,7 +157,7 @@ RationalNumber::RationalNumber( int number, int base )
 		}
 
 		// Work with a copy of the number that we can poke at.
-		int numberStringLength = strlen( numberString ) + 1;
+		int numberStringLength = (int)strlen( numberString ) + 1;
 		char* numberStringCopy = new char[ numberStringLength ];
 		strcpy_s( numberStringCopy, numberStringLength, numberString );
 
@@ -184,7 +184,7 @@ RationalNumber::RationalNumber( int number, int base )
 				break;
 	
 		// If we didn't find it, then this number is bogus.
-		if( termOfDegreeZero == '\0' )
+		if( *termOfDegreeZero == '\0' )
 		{
 			environment.AddError( "Cannot parse \"%s\" into a rational number.", numberString );
 			break;

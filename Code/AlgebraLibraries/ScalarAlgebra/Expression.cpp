@@ -27,7 +27,7 @@ Expression::Expression( void )
 //=========================================================================================
 Expression::Variable::Variable( const char* name, int exponent )
 {
-	int nameSize = strlen( name ) + 1;
+	int nameSize = (int)strlen( name ) + 1;
 	this->name = new char[ nameSize ];
 	strcpy_s( this->name, nameSize, name );
 	this->exponent = exponent;
@@ -222,7 +222,7 @@ bool Expression::Term::Print( char* printBuffer, int printBufferSize, PrintPurpo
 		{
 			if( 0 != strstr( printBuffer, "." ) )
 			{
-				int index = strlen( printBuffer );
+				int index = (int)strlen( printBuffer );
 				while( index > 0 )
 				{
 					index--;
@@ -276,7 +276,7 @@ bool Expression::Variable::Print( char* printBuffer, int printBufferSize, PrintP
 	else if( printPurpose == PRINT_FOR_LATEX )
 	{
 		char latexName[ PRINT_BUFFER_SIZE_SMALL ];
-		int nameLen = strlen( name );
+		int nameLen = (int)strlen( name );
 		if( nameLen == 1 )
 			strcpy_s( latexName, sizeof( latexName ), name );
 		else

@@ -107,7 +107,7 @@ void CalcLibClassInfo::MapClassInheritance( const char* inheritingClassName )
 {
 	// Remember that we inherit from the given class.
 	char*& className = inheritingClassNames[ inhertingClassesCount++ ];
-	int inheritingClassNameLen = strlen( inheritingClassName ) + 1;
+	int inheritingClassNameLen = (int)strlen( inheritingClassName ) + 1;
 	className = new char[ inheritingClassNameLen ];
 	strcpy_s( className, inheritingClassNameLen, inheritingClassName );
 }
